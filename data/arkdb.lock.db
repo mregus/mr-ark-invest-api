@@ -1,0 +1,6 @@
+#FileLock
+#Mon Aug 10 19:25:42 EDT 2026
+hostName=172.20.235.248
+id=19fedff095e37b3d592379dcb569143af10cc9d23fe
+method=file
+server=172.20.235.248\:50955
