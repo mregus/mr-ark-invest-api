@@ -5,6 +5,8 @@ import com.ark.invest.fund.dto.FundRequest;
 import com.ark.invest.fund.dto.FundResponse;
 import com.ark.invest.fund.service.FundInvestorService;
 import com.ark.invest.fund.service.FundService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/funds")
+@Tag(
+        name = "Funds",
+        description = "Manage investment funds and their investors"
+)
 public class FundController {
 
     private final FundService fundService;
@@ -61,6 +67,14 @@ public class FundController {
 
     @PostMapping("/{fundId}/investors/{investorId}")
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(
+            summary = "Associate an investor with a fund",
+            description = """
+            Associates an existing investor with an existing fund.
+            An investor may participate in multiple funds and a fund
+            may contain multiple investors.
+            """
+    )
     public FundInvestorResponse addInvestor(
             @PathVariable Long fundId,
             @PathVariable Long investorId

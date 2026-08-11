@@ -3,6 +3,8 @@ package com.ark.invest.transaction.controller;
 import com.ark.invest.transaction.dto.TransactionRequest;
 import com.ark.invest.transaction.dto.TransactionResponse;
 import com.ark.invest.transaction.service.InvestmentTransactionService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transactions")
+@Tag(
+        name = "Transactions",
+        description = "Manage fund transactions"
+)
 public class InvestmentTransactionController {
 
     private final InvestmentTransactionService transactionService;
@@ -23,6 +29,14 @@ public class InvestmentTransactionController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(
+            summary = "Create an investment transaction",
+            description = """
+            Creates a credit or debit transaction for an investor
+            against a fund. The investor must already be associated
+            with the specified fund.
+            """
+    )
     public TransactionResponse create(
             @Valid @RequestBody TransactionRequest request
     ) {

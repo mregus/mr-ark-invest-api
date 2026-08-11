@@ -3,6 +3,7 @@ package com.ark.invest.investor.controller;
 import com.ark.invest.investor.dto.InvestorRequest;
 import com.ark.invest.investor.dto.InvestorResponse;
 import com.ark.invest.investor.service.InvestorService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/investors")
+@Tag(
+        name = "Investors",
+        description = "Manage investors"
+)
 public class InvestorController {
 
     private final InvestorService investorService;
