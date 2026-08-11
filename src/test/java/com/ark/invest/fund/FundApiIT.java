@@ -36,13 +36,15 @@ class FundApiIT extends BaseIntegrationTest {
                                 }
                                 """))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.message").value("Validation failed"));
+                .andExpect(jsonPath("$.message").value("Validation failed"))
+                .andExpect(jsonPath("$.validationErrors.name").value("must not be blank"));
     }
 
     @Test
     void shouldReturn404ForMissingFund() throws Exception {
         mockMvc.perform(get("/api/funds/999"))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.message").value("Fund not found: 999"));
+                .andExpect(jsonPath("$.message").value("Fund not found: 999"))
+                .andExpect(jsonPath("$.error").value("Not Found"));
     }
 }

@@ -36,6 +36,7 @@ class InvestorApiIT extends BaseIntegrationTest {
                                 }
                                 """))
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.validationErrors.email").exists());
+                .andExpect(jsonPath("$.message").value("Validation failed"))
+                .andExpect(jsonPath("$.validationErrors.email").value("must be a well-formed email address"));
     }
 }
