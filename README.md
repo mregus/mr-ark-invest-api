@@ -82,8 +82,6 @@ Expected response:
 
 ## Domain Model
 
-## Domain Model
-
 The application models the many-to-many relationship between funds and
 investors explicitly through the `FUND_INVESTORS` table. Transactions
 represent financial activity performed by an investor against a specific fund.
