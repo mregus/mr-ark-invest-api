@@ -63,6 +63,18 @@ public class InvestmentTransaction {
         this.description = description;
     }
 
+    public void update(
+            TransactionType type,
+            BigDecimal amount,
+            LocalDate transactionDate,
+            String description
+    ) {
+        this.type = type;
+        this.amount = amount;
+        this.transactionDate = transactionDate;
+        this.description = description;
+    }
+
     public Long getId() {
         return id;
     }
@@ -105,5 +117,13 @@ public class InvestmentTransaction {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setFund(Fund fund) {
+        this.fund = fund;
+    }
+
+    public void setInvestor(Investor investor) {
+        this.investor = investor;
     }
 }

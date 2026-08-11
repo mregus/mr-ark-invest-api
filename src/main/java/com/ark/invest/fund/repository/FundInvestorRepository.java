@@ -14,4 +14,8 @@ public interface FundInvestorRepository extends JpaRepository<FundInvestor, Long
     List<FundInvestor> findByInvestorId(Long investorId);
 
     void deleteByFundIdAndInvestorId(Long fundId, Long investorId);
+
+    long countByFundId(Long fundId);
+
+    long countByInvestorId(Long investorId);
 }
