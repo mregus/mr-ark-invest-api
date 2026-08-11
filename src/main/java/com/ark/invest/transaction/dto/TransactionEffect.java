@@ -1,4 +1,4 @@
-package com.ark.transaction.model;
+package com.ark.invest.transaction.dto;
 
 public enum TransactionEffect {
     CREDIT,

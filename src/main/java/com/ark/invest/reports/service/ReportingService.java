@@ -9,7 +9,7 @@ import com.ark.invest.reports.dto.FundSummaryResponse;
 import com.ark.invest.reports.dto.InvestorSummaryResponse;
 import com.ark.invest.transaction.entity.InvestmentTransaction;
 import com.ark.invest.transaction.repository.InvestmentTransactionRepository;
-import com.ark.transaction.model.TransactionEffect;
+import com.ark.invest.transaction.dto.TransactionEffect;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

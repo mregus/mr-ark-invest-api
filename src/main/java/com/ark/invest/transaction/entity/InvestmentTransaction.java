@@ -2,7 +2,7 @@ package com.ark.invest.transaction.entity;
 
 import com.ark.invest.fund.entity.Fund;
 import com.ark.invest.investor.entity.Investor;
-import com.ark.transaction.model.TransactionType;
+import com.ark.invest.transaction.dto.TransactionType;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;

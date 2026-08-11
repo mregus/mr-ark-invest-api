@@ -1,8 +1,5 @@
 package com.ark.invest.transaction.dto;
 
-import com.ark.transaction.model.TransactionEffect;
-import com.ark.transaction.model.TransactionType;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
